@@ -1,51 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>广告拦截插件</title>
-  <style>
-    body {
-      width: 300px;
-      height: 200px;
-      padding: 10px;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5; /* 添加背景色 */
-      color: #333; /* 文本颜色 */
-      border-radius: 5px; /* 边框圆角 */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-    }
+    <meta charset="utf-8">
+    <title>广告拦截插件</title>
+    <!-- 添加页面图标（可选，这里假设图标文件名为 icon.png 且在同一目录下） -->
+    <link rel="shortcut icon" href="icon.png">
+    <style>
+        /* 整体页面容器样式 */
+        .main-container {
+            width: 350px;
+            min-height: 300px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    h2 {
-      color: #007bff; /* 标题颜色 */
-      text-align: center; /* 标题居中 */
-      margin-bottom: 15px; /* 下边距 */
-    }
+        /* 标题部分样式 */
+        .header-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    p {
-      line-height: 1.5; /* 行高 */
-      margin-bottom: 10px; /* 下边距 */
-    }
+        .header-section h1 {
+            color: #007bff;
+            margin-bottom: 5px;
+        }
 
-    button {
-      width: 100%; /* 按钮宽度 */
-      padding: 8px; /* 内边距 */
-      background-color: #007bff; /* 背景色 */
-      color: white; /* 文本颜色 */
-      border: none; /* 无边框 */
-      border-radius: 4px; /* 边框圆角 */
-      cursor: pointer; /* 鼠标悬停效果 */
-      transition: background-color 0.3s ease; /* 背景色过渡效果 */
-    }
+        .header-section p.tagline {
+            font-style: italic;
+            font-size: 0.9em;
+        }
 
-    button:hover {
-      background-color: #0056b3; /* 鼠标悬停时的背景色 */
-    }
-  </style>
+        /* 功能介绍部分样式 */
+        .feature-section {
+            margin-bottom: 20px;
+        }
+
+        .feature-section h2 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .feature-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .feature-section li {
+            margin-bottom: 5px;
+        }
+
+        /* 操作按钮部分样式 */
+        .button-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .button-section button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            transform: scale(1);
+        }
+
+        .button-section button:hover {
+            background-color: #0056b3;
+        }
+
+        .button-section button:active {
+            transform: scale(0.98);
+        }
+
+        /* 版权信息与帮助链接部分样式 */
+        .footer-section {
+            text-align: center;
+            font-size: 0.8em;
+        }
+
+        .footer-section a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
-  <h2>自定义广告拦截插件</h2>
-  <p>右键可以实现自定义屏蔽所选择的内容</p>
-  <button id="resetButton">刷新</button>
-  <script src="popup.js"></script>
+<div class="main-container">
+    <!-- 插件标题部分 -->
+    <header class="header-section">
+        <h1>自定义广告拦截插件</h1>
+        <p class="tagline">轻松掌控广告展示，享受纯净浏览体验</p>
+    </header>
+
+    <!-- 功能介绍部分 -->
+    <section class="feature-section">
+        <h2>功能介绍</h2>
+        <ul>
+            <li>通过右键菜单，可对广告元素进行个性化拦截操作。</li>
+            <li>支持一键屏蔽具有相同特征的广告，方便快捷。</li>
+            <li>能查看广告拦截统计信息，了解插件工作成效。</li>
+        </ul>
+    </section>
+
+    <!-- 操作按钮部分 -->
+    <section class="button-section">
+        <button id="resetButton">刷新页面（重置拦截）</button>
+        <button id="viewStatsButton">查看广告拦截统计</button>
+        <button id="openSettingsButton">打开设置</button>
+    </section>
+
+    <!-- 版权信息与帮助链接部分 -->
+    <footer class="footer-section">
+      <p>&copy; 基于chrome浏览器的用户自定义广告拦截插件/p>
+        <p><a href="help.html">帮助</a> | <a href="feedback.html">反馈建议</a></p>
+    </footer>
+</div>
+<script src="popup.js"></script>
 </body>
+
 </html>
